@@ -1,1 +1,1 @@
-git push https://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@github.com/abbGusjak251/jazzmaker.git
+git push https://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@github.com/abbGusjak251/jazzmaker.git
