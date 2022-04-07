@@ -10,6 +10,18 @@ except:
     print("Failed at lines 6 n 7")
     exit()
 mid = mido.MidiFile(fname)
+#print(mid.tracks)
+for t in mid.tracks[1:]:
+    print(t)
+    dataset = []
+    note_on = 0
+    if t.note == 'control_change':
+        note_on = 1
+    dataset.append(note_on)
+    dataset.append(t.velocity)
+    dataset.append(t.time)
+    print(dataset)
+#exit()
 
 if not ".mid" in fname:
     fname += ".mid"
@@ -33,7 +45,8 @@ except:
 mid.tracks = new_tracks
 
 dirname = f'.\midi_tracks\{fname.replace(".mid", "")}'
-os.system(f'mkdir {dirname}')
+if not os.path.exists(dirname):
+    os.system(f'mkdir {dirname}')
 mid.save(f'{dirname}/track_{arg}_{fname}')
 
 

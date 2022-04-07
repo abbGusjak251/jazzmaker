@@ -2,3 +2,8 @@ midi_tracks
 midi
 all_midi
 __pycache__
+bounces
+training_tracks
+training_checkpoints
+push.bat
+
